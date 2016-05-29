@@ -79,4 +79,9 @@ extension String {
     subscript(i: Int) -> Character? {
         return i < self.characters.count ? self[self.startIndex.advancedBy(i)] : nil
     }
+    
+    subscript(i: Range<Int>) -> String {
+        return self[self.startIndex.advancedBy(i.startIndex)..<self.startIndex.advancedBy(i.endIndex)]
+    }
+
 }
